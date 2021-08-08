@@ -1,21 +1,21 @@
-This repository has the contracts that implement the wrapped spd token on BSC network.
+# This repository has the contracts that implement the wrapped spd token on BSC network.
 
-# Installation
+## Installation
 
-    npm install
+    yarn install
 
-# Compilation
+## Compilation
 
-    npm run compile
+    yarn run compile
 
-# Testing
+## Testing
 
-    npm test
+    yarn test
 
-# Testing Coverage
+## Testing Coverage
 
-    npm run coverage
+    yarn run coverage
 
-# Deployment
+## Deployment
 
     node deployer.js --input-file [file] --gas-price-gwei [gwei] --rpc-url [url]

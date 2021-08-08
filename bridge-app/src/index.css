@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background: #040e13; */
+  background: #f8f9fa;
+  color: #333;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: rgb(0, 0, 238);
+}
+
+div {
+  outline: none;
+}
+
+.Marquee {
+  overflow-x: hidden;
+  display: block;
+}
+.MarqueeContent {
+  display: inline-block;
+}
