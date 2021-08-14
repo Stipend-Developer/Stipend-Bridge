@@ -1,0 +1,3074 @@
+{
+  "contractName": "OwnableContractOwner",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "reclaimToken",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "claimOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "pendingOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "ownedContract",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "CalledTransferOwnership",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "contractToOwn",
+          "type": "address"
+        }
+      ],
+      "name": "CalledClaimOwnership",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "ownedContract",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "CalledReclaimToken",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "ownedContract",
+          "type": "address"
+        },
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "callTransferOwnership",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "contractToOwn",
+          "type": "address"
+        }
+      ],
+      "name": "callClaimOwnership",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "ownedContract",
+          "type": "address"
+        },
+        {
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "callReclaimToken",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405260008054600160a060020a031916331790556107fd806100256000396000f30060806040526004361061007f5763ffffffff60e060020a60003504166317ffc3208114610084578063332ee192146100a75780634ca66540146100dc5780634e71e0c814610103578063715018a6146101185780638da5cb5b1461012d578063e30c39781461015e578063f2080dd014610173578063f2fde38b1461019a575b600080fd5b34801561009057600080fd5b506100a5600160a060020a03600435166101bb565b005b3480156100b357600080fd5b506100c8600160a060020a0360043516610287565b604080519115158252519081900360200190f35b3480156100e857600080fd5b506100c8600160a060020a036004358116906024351661033a565b34801561010f57600080fd5b506100a561048a565b34801561012457600080fd5b506100a5610512565b34801561013957600080fd5b5061014261057e565b60408051600160a060020a039092168252519081900360200190f35b34801561016a57600080fd5b5061014261058d565b34801561017f57600080fd5b506100c8600160a060020a036004358116906024351661059c565b3480156101a657600080fd5b506100a5600160a060020a03600435166106ec565b60008054600160a060020a031633146101d357600080fd5b604080517f70a082310000000000000000000000000000000000000000000000000000000081523060048201529051600160a060020a038416916370a082319160248083019260209291908290030181600087803b15801561023457600080fd5b505af1158015610248573d6000803e3d6000fd5b505050506040513d602081101561025e57600080fd5b505160005490915061028390600160a060020a0384811691168363ffffffff61073216565b5050565b60008054600160a060020a0316331461029f57600080fd5b81600160a060020a0316634e71e0c86040518163ffffffff1660e060020a028152600401600060405180830381600087803b1580156102dd57600080fd5b505af11580156102f1573d6000803e3d6000fd5b505060408051600160a060020a038616815290517ff3ad522750d368e1255a208fc9116f9ed12f39188f69b89c50c8dc43df78049b9350908190036020019150a1506001919050565b60008054600160a060020a0316331461035257600080fd5b600160a060020a03821615156103c957604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601660248201527f696e76616c6964205f746f6b656e206164647265737300000000000000000000604482015290519081900360640190fd5b82600160a060020a03166317ffc320836040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b15801561042457600080fd5b505af1158015610438573d6000803e3d6000fd5b505060408051600160a060020a0380881682528616602082015281517f56195bb7b8fa8c05ef27289a07013ef2d3f4608c4308e875c6c2e19eb033a9589450908190039091019150a150600192915050565b600154600160a060020a031633146104a157600080fd5b60015460008054604051600160a060020a0393841693909116917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600180546000805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600054600160a060020a0316331461052957600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600054600160a060020a031681565b600154600160a060020a031681565b60008054600160a060020a031633146105b457600080fd5b600160a060020a038216151561062b57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601860248201527f696e76616c6964206e65774f776e657220616464726573730000000000000000604482015290519081900360640190fd5b82600160a060020a031663f2fde38b836040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b15801561068657600080fd5b505af115801561069a573d6000803e3d6000fd5b505060408051600160a060020a0380881682528616602082015281517f18838a3b49e4b76edd553a08a7ae770b10cad20889e3d45de720694464f15ca09450908190039091019150a150600192915050565b600054600160a060020a0316331461070357600080fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b82600160a060020a031663a9059cbb83836040518363ffffffff1660e060020a0281526004018083600160a060020a0316600160a060020a0316815260200182815260200192505050602060405180830381600087803b15801561079557600080fd5b505af11580156107a9573d6000803e3d6000fd5b505050506040513d60208110156107bf57600080fd5b505115156107cc57600080fd5b5050505600a165627a7a723058204aab94035b7feaeac9b5e0ef7319b1c7c857bcd844cdf0477c34b56e7a978fc00029",
+  "deployedBytecode": "0x60806040526004361061007f5763ffffffff60e060020a60003504166317ffc3208114610084578063332ee192146100a75780634ca66540146100dc5780634e71e0c814610103578063715018a6146101185780638da5cb5b1461012d578063e30c39781461015e578063f2080dd014610173578063f2fde38b1461019a575b600080fd5b34801561009057600080fd5b506100a5600160a060020a03600435166101bb565b005b3480156100b357600080fd5b506100c8600160a060020a0360043516610287565b604080519115158252519081900360200190f35b3480156100e857600080fd5b506100c8600160a060020a036004358116906024351661033a565b34801561010f57600080fd5b506100a561048a565b34801561012457600080fd5b506100a5610512565b34801561013957600080fd5b5061014261057e565b60408051600160a060020a039092168252519081900360200190f35b34801561016a57600080fd5b5061014261058d565b34801561017f57600080fd5b506100c8600160a060020a036004358116906024351661059c565b3480156101a657600080fd5b506100a5600160a060020a03600435166106ec565b60008054600160a060020a031633146101d357600080fd5b604080517f70a082310000000000000000000000000000000000000000000000000000000081523060048201529051600160a060020a038416916370a082319160248083019260209291908290030181600087803b15801561023457600080fd5b505af1158015610248573d6000803e3d6000fd5b505050506040513d602081101561025e57600080fd5b505160005490915061028390600160a060020a0384811691168363ffffffff61073216565b5050565b60008054600160a060020a0316331461029f57600080fd5b81600160a060020a0316634e71e0c86040518163ffffffff1660e060020a028152600401600060405180830381600087803b1580156102dd57600080fd5b505af11580156102f1573d6000803e3d6000fd5b505060408051600160a060020a038616815290517ff3ad522750d368e1255a208fc9116f9ed12f39188f69b89c50c8dc43df78049b9350908190036020019150a1506001919050565b60008054600160a060020a0316331461035257600080fd5b600160a060020a03821615156103c957604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601660248201527f696e76616c6964205f746f6b656e206164647265737300000000000000000000604482015290519081900360640190fd5b82600160a060020a03166317ffc320836040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b15801561042457600080fd5b505af1158015610438573d6000803e3d6000fd5b505060408051600160a060020a0380881682528616602082015281517f56195bb7b8fa8c05ef27289a07013ef2d3f4608c4308e875c6c2e19eb033a9589450908190039091019150a150600192915050565b600154600160a060020a031633146104a157600080fd5b60015460008054604051600160a060020a0393841693909116917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600180546000805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600054600160a060020a0316331461052957600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600054600160a060020a031681565b600154600160a060020a031681565b60008054600160a060020a031633146105b457600080fd5b600160a060020a038216151561062b57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601860248201527f696e76616c6964206e65774f776e657220616464726573730000000000000000604482015290519081900360640190fd5b82600160a060020a031663f2fde38b836040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b15801561068657600080fd5b505af115801561069a573d6000803e3d6000fd5b505060408051600160a060020a0380881682528616602082015281517f18838a3b49e4b76edd553a08a7ae770b10cad20889e3d45de720694464f15ca09450908190039091019150a150600192915050565b600054600160a060020a0316331461070357600080fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b82600160a060020a031663a9059cbb83836040518363ffffffff1660e060020a0281526004018083600160a060020a0316600160a060020a0316815260200182815260200192505050602060405180830381600087803b15801561079557600080fd5b505af11580156107a9573d6000803e3d6000fd5b505050506040513d60208110156107bf57600080fd5b505115156107cc57600080fd5b5050505600a165627a7a723058204aab94035b7feaeac9b5e0ef7319b1c7c857bcd844cdf0477c34b56e7a978fc00029",
+  "sourceMap": "66:1129:18:-;;;567:5:23;:18;;-1:-1:-1;;;;;;567:18:23;575:10;567:18;;;66:1129:18;;;;;;",
+  "deployedSourceMap": "66:1129:18:-;;;;;;;;;-1:-1:-1;;;66:1129:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;599:152:21;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;599:152:21;-1:-1:-1;;;;;599:152:21;;;;;;;602:211:18;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;602:211:18;-1:-1:-1;;;;;602:211:18;;;;;;;;;;;;;;;;;;;;;;;895:298;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;895:298:18;-1:-1:-1;;;;;895:298:18;;;;;;;;;;781:164:22;;8:9:-1;5:2;;;30:1;27;20:12;5:2;781:164:22;;;;1001:111:23;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1001:111:23;;;;238:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:23;;;;;;;;-1:-1:-1;;;;;238:20:23;;;;;;;;;;;;;;253:27:22;;8:9:-1;5:2;;;30:1;27;20:12;5:2;253:27:22;;;;207:325:18;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;207:325:18;-1:-1:-1;;;;;207:325:18;;;;;;;;;;601:96:22;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;601:96:22;-1:-1:-1;;;;;601:96:22;;;;;599:152:21;665:15;719:5:23;;-1:-1:-1;;;;;719:5:23;705:10;:19;697:28;;;;;;683:22:21;;;;;;700:4;683:22;;;;;;-1:-1:-1;;;;;683:16:21;;;;;:22;;;;;;;;;;;;;;-1:-1:-1;683:16:21;:22;;;5:2:-1;;;;30:1;27;20:12;5:2;683:22:21;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;683:22:21;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;683:22:21;731:5;;683:22;;-1:-1:-1;711:35:21;;-1:-1:-1;;;;;711:19:21;;;;731:5;683:22;711:35;:19;:35;:::i;:::-;599:152;;:::o;602:211:18:-;689:4;719:5:23;;-1:-1:-1;;;;;719:5:23;705:10;:19;697:28;;;;;;705:13:18;-1:-1:-1;;;;;705:28:18;;:30;;;;;-1:-1:-1;;;705:30:18;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;705:30:18;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;750:35:18;;;-1:-1:-1;;;;;750:35:18;;;;;;;;-1:-1:-1;750:35:18;;;;;;;-1:-1:-1;750:35:18;-1:-1:-1;802:4:18;602:211;;;:::o;895:298::-;994:4;719:5:23;;-1:-1:-1;;;;;719:5:23;705:10;:19;697:28;;;;;;-1:-1:-1;;;;;1018:20:18;;;;1010:55;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1075:13;-1:-1:-1;;;;;1075:26:18;;1102:6;1075:34;;;;;-1:-1:-1;;;1075:34:18;;;;;;;-1:-1:-1;;;;;1075:34:18;-1:-1:-1;;;;;1075:34:18;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1075:34:18;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;1124:41:18;;;-1:-1:-1;;;;;1124:41:18;;;;;;;;;;;;;;;-1:-1:-1;1124:41:18;;;;;;;;-1:-1:-1;1124:41:18;-1:-1:-1;1182:4:18;895:298;;;;:::o;781:164:22:-;433:12;;-1:-1:-1;;;;;433:12:22;419:10;:26;411:35;;;;;;870:12;;;863:5;;842:41;;-1:-1:-1;;;;;870:12:22;;;;863:5;;;;842:41;;;897:12;;;;889:20;;-1:-1:-1;;889:20:22;;;-1:-1:-1;;;;;897:12:22;;889:20;;;;915:25;;;781:164::o;1001:111:23:-;719:5;;-1:-1:-1;;;;;719:5:23;705:10;:19;697:28;;;;;;1077:5;;;1058:25;;-1:-1:-1;;;;;1077:5:23;;;;1058:25;;;1105:1;1089:18;;-1:-1:-1;;1089:18:23;;;1001:111::o;238:20::-;;;-1:-1:-1;;;;;238:20:23;;:::o;253:27:22:-;;;-1:-1:-1;;;;;253:27:22;;:::o;207:325:18:-;315:4;719:5:23;;-1:-1:-1;;;;;719:5:23;705:10;:19;697:28;;;;;;-1:-1:-1;;;;;339:22:18;;;;331:59;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;400:13;-1:-1:-1;;;;;400:31:18;;432:8;400:41;;;;;-1:-1:-1;;;400:41:18;;;;;;;-1:-1:-1;;;;;400:41:18;-1:-1:-1;;;;;400:41:18;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;400:41:18;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;456:48:18;;;-1:-1:-1;;;;;456:48:18;;;;;;;;;;;;;;;-1:-1:-1;456:48:18;;;;;;;;-1:-1:-1;456:48:18;-1:-1:-1;521:4:18;207:325;;;;:::o;601:96:22:-;719:5:23;;-1:-1:-1;;;;;719:5:23;705:10;:19;697:28;;;;;;669:12:22;:23;;-1:-1:-1;;669:23:22;-1:-1:-1;;;;;669:23:22;;;;;;;;;;601:96::o;368:149:31:-;483:6;-1:-1:-1;;;;;483:15:31;;499:3;504:6;483:28;;;;;-1:-1:-1;;;483:28:31;;;;;;;-1:-1:-1;;;;;483:28:31;-1:-1:-1;;;;;483:28:31;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;483:28:31;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;483:28:31;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;483:28:31;475:37;;;;;;;;368:149;;;:::o",
+  "source": "pragma solidity 0.4.24;\n\nimport \"../utils/OwnableContract.sol\";\n\n\ncontract OwnableContractOwner is OwnableContract {\n\n    event CalledTransferOwnership(OwnableContract ownedContract, address newOwner);\n\n    function callTransferOwnership(OwnableContract ownedContract, address newOwner) external onlyOwner returns (bool) {\n        require(newOwner != address(0), \"invalid newOwner address\");\n        ownedContract.transferOwnership(newOwner);\n        emit CalledTransferOwnership(ownedContract, newOwner);\n        return true;\n    }\n\n    event CalledClaimOwnership(OwnableContract contractToOwn);\n\n    function callClaimOwnership(OwnableContract contractToOwn) external onlyOwner returns (bool) {\n        contractToOwn.claimOwnership();\n        emit CalledClaimOwnership(contractToOwn);\n        return true;\n    }\n\n    event CalledReclaimToken(OwnableContract ownedContract, ERC20 _token);\n\n    function callReclaimToken(OwnableContract ownedContract, ERC20 _token) external onlyOwner returns (bool) {\n        require(_token != address(0), \"invalid _token address\");\n        ownedContract.reclaimToken(_token);\n        emit CalledReclaimToken(ownedContract, _token);\n        return true;\n    }\n}\n",
+  "sourcePath": "contracts/utils/OwnableContractOwner.sol",
+  "ast": {
+    "absolutePath": "contracts/utils/OwnableContractOwner.sol",
+    "exportedSymbols": {
+      "OwnableContractOwner": [
+        2565
+      ]
+    },
+    "id": 2566,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2456,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:18"
+      },
+      {
+        "absolutePath": "contracts/utils/OwnableContract.sol",
+        "file": "../utils/OwnableContract.sol",
+        "id": 2457,
+        "nodeType": "ImportDirective",
+        "scope": 2566,
+        "sourceUnit": 2455,
+        "src": "25:38:18",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2458,
+              "name": "OwnableContract",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2454,
+              "src": "99:15:18",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                "typeString": "contract OwnableContract"
+              }
+            },
+            "id": 2459,
+            "nodeType": "InheritanceSpecifier",
+            "src": "99:15:18"
+          }
+        ],
+        "contractDependencies": [
+          2454,
+          2752,
+          2804,
+          2890
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2565,
+        "linearizedBaseContracts": [
+          2565,
+          2454,
+          2804,
+          2752,
+          2890
+        ],
+        "name": "OwnableContractOwner",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2465,
+            "name": "CalledTransferOwnership",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2464,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2461,
+                  "indexed": false,
+                  "name": "ownedContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2465,
+                  "src": "152:29:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                    "typeString": "contract OwnableContract"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2460,
+                    "name": "OwnableContract",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2454,
+                    "src": "152:15:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                      "typeString": "contract OwnableContract"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2463,
+                  "indexed": false,
+                  "name": "newOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2465,
+                  "src": "183:16:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2462,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "183:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "151:49:18"
+            },
+            "src": "122:79:18"
+          },
+          {
+            "body": {
+              "id": 2498,
+              "nodeType": "Block",
+              "src": "321:211:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 2481,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 2477,
+                          "name": "newOwner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2469,
+                          "src": "339:8:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 2479,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "359:1:18",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 2478,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "351:7:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 2480,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "351:10:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "339:22:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "696e76616c6964206e65774f776e65722061646472657373",
+                        "id": 2482,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "363:26:18",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_38df9a6ac171cc030fc8584b13686dac73d1e8a81e6950ae3f43e538a8a754d5",
+                          "typeString": "literal_string \"invalid newOwner address\""
+                        },
+                        "value": "invalid newOwner address"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_38df9a6ac171cc030fc8584b13686dac73d1e8a81e6950ae3f43e538a8a754d5",
+                          "typeString": "literal_string \"invalid newOwner address\""
+                        }
+                      ],
+                      "id": 2476,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3701,
+                        3702
+                      ],
+                      "referencedDeclaration": 3702,
+                      "src": "331:7:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2483,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "331:59:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2484,
+                  "nodeType": "ExpressionStatement",
+                  "src": "331:59:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2488,
+                        "name": "newOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2469,
+                        "src": "432:8:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2485,
+                        "name": "ownedContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2467,
+                        "src": "400:13:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        }
+                      },
+                      "id": 2487,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2782,
+                      "src": "400:31:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 2489,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "400:41:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2490,
+                  "nodeType": "ExpressionStatement",
+                  "src": "400:41:18"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2492,
+                        "name": "ownedContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2467,
+                        "src": "480:13:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 2493,
+                        "name": "newOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2469,
+                        "src": "495:8:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 2491,
+                      "name": "CalledTransferOwnership",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2465,
+                      "src": "456:23:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_OwnableContract_$2454_$_t_address_$returns$__$",
+                        "typeString": "function (contract OwnableContract,address)"
+                      }
+                    },
+                    "id": 2494,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "456:48:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2495,
+                  "nodeType": "EmitStatement",
+                  "src": "451:53:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 2496,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "521:4:18",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 2475,
+                  "id": 2497,
+                  "nodeType": "Return",
+                  "src": "514:11:18"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2499,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2472,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2471,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2838,
+                  "src": "296:9:18",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "296:9:18"
+              }
+            ],
+            "name": "callTransferOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2470,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2467,
+                  "name": "ownedContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2499,
+                  "src": "238:29:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                    "typeString": "contract OwnableContract"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2466,
+                    "name": "OwnableContract",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2454,
+                    "src": "238:15:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                      "typeString": "contract OwnableContract"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2469,
+                  "name": "newOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2499,
+                  "src": "269:16:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2468,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "269:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "237:49:18"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2475,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2474,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2499,
+                  "src": "315:4:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2473,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "315:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "314:6:18"
+            },
+            "scope": 2565,
+            "src": "207:325:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2503,
+            "name": "CalledClaimOwnership",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2502,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2501,
+                  "indexed": false,
+                  "name": "contractToOwn",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2503,
+                  "src": "565:29:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                    "typeString": "contract OwnableContract"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2500,
+                    "name": "OwnableContract",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2454,
+                    "src": "565:15:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                      "typeString": "contract OwnableContract"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "564:31:18"
+            },
+            "src": "538:58:18"
+          },
+          {
+            "body": {
+              "id": 2523,
+              "nodeType": "Block",
+              "src": "695:118:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2512,
+                        "name": "contractToOwn",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2505,
+                        "src": "705:13:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        }
+                      },
+                      "id": 2514,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "claimOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2803,
+                      "src": "705:28:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                        "typeString": "function () external"
+                      }
+                    },
+                    "id": 2515,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "705:30:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2516,
+                  "nodeType": "ExpressionStatement",
+                  "src": "705:30:18"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2518,
+                        "name": "contractToOwn",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2505,
+                        "src": "771:13:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        }
+                      ],
+                      "id": 2517,
+                      "name": "CalledClaimOwnership",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2503,
+                      "src": "750:20:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_OwnableContract_$2454_$returns$__$",
+                        "typeString": "function (contract OwnableContract)"
+                      }
+                    },
+                    "id": 2519,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "750:35:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2520,
+                  "nodeType": "EmitStatement",
+                  "src": "745:40:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 2521,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "802:4:18",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 2511,
+                  "id": 2522,
+                  "nodeType": "Return",
+                  "src": "795:11:18"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2524,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2508,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2507,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2838,
+                  "src": "670:9:18",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "670:9:18"
+              }
+            ],
+            "name": "callClaimOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2506,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2505,
+                  "name": "contractToOwn",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2524,
+                  "src": "630:29:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                    "typeString": "contract OwnableContract"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2504,
+                    "name": "OwnableContract",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2454,
+                    "src": "630:15:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                      "typeString": "contract OwnableContract"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "629:31:18"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2511,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2510,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2524,
+                  "src": "689:4:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2509,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "689:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "688:6:18"
+            },
+            "scope": 2565,
+            "src": "602:211:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2530,
+            "name": "CalledReclaimToken",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2529,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2526,
+                  "indexed": false,
+                  "name": "ownedContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2530,
+                  "src": "844:29:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                    "typeString": "contract OwnableContract"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2525,
+                    "name": "OwnableContract",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2454,
+                    "src": "844:15:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                      "typeString": "contract OwnableContract"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2528,
+                  "indexed": false,
+                  "name": "_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2530,
+                  "src": "875:12:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ERC20_$3134",
+                    "typeString": "contract ERC20"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2527,
+                    "name": "ERC20",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3134,
+                    "src": "875:5:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20_$3134",
+                      "typeString": "contract ERC20"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "843:45:18"
+            },
+            "src": "819:70:18"
+          },
+          {
+            "body": {
+              "id": 2563,
+              "nodeType": "Block",
+              "src": "1000:193:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 2546,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 2542,
+                          "name": "_token",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2534,
+                          "src": "1018:6:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_ERC20_$3134",
+                            "typeString": "contract ERC20"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 2544,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "1036:1:18",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 2543,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1028:7:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 2545,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1028:10:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1018:20:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "696e76616c6964205f746f6b656e2061646472657373",
+                        "id": 2547,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1040:24:18",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_10a905bbe187fde970257bdbd81b6983a3e0fe3a5079c87908dc9edf16df0cde",
+                          "typeString": "literal_string \"invalid _token address\""
+                        },
+                        "value": "invalid _token address"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_10a905bbe187fde970257bdbd81b6983a3e0fe3a5079c87908dc9edf16df0cde",
+                          "typeString": "literal_string \"invalid _token address\""
+                        }
+                      ],
+                      "id": 2541,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3701,
+                        3702
+                      ],
+                      "referencedDeclaration": 3702,
+                      "src": "1010:7:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2548,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1010:55:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2549,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1010:55:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2553,
+                        "name": "_token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2534,
+                        "src": "1102:6:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC20_$3134",
+                          "typeString": "contract ERC20"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_ERC20_$3134",
+                          "typeString": "contract ERC20"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2550,
+                        "name": "ownedContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2532,
+                        "src": "1075:13:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        }
+                      },
+                      "id": 2552,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "reclaimToken",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2751,
+                      "src": "1075:26:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_contract$_ERC20Basic_$3166_$returns$__$",
+                        "typeString": "function (contract ERC20Basic) external"
+                      }
+                    },
+                    "id": 2554,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1075:34:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2555,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1075:34:18"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2557,
+                        "name": "ownedContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2532,
+                        "src": "1143:13:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 2558,
+                        "name": "_token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2534,
+                        "src": "1158:6:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC20_$3134",
+                          "typeString": "contract ERC20"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_ERC20_$3134",
+                          "typeString": "contract ERC20"
+                        }
+                      ],
+                      "id": 2556,
+                      "name": "CalledReclaimToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2530,
+                      "src": "1124:18:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_OwnableContract_$2454_$_t_contract$_ERC20_$3134_$returns$__$",
+                        "typeString": "function (contract OwnableContract,contract ERC20)"
+                      }
+                    },
+                    "id": 2559,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1124:41:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2560,
+                  "nodeType": "EmitStatement",
+                  "src": "1119:46:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 2561,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1182:4:18",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 2540,
+                  "id": 2562,
+                  "nodeType": "Return",
+                  "src": "1175:11:18"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2564,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2537,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2536,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2838,
+                  "src": "975:9:18",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "975:9:18"
+              }
+            ],
+            "name": "callReclaimToken",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2535,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2532,
+                  "name": "ownedContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2564,
+                  "src": "921:29:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                    "typeString": "contract OwnableContract"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2531,
+                    "name": "OwnableContract",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2454,
+                    "src": "921:15:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                      "typeString": "contract OwnableContract"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2534,
+                  "name": "_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2564,
+                  "src": "952:12:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ERC20_$3134",
+                    "typeString": "contract ERC20"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2533,
+                    "name": "ERC20",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3134,
+                    "src": "952:5:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20_$3134",
+                      "typeString": "contract ERC20"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "920:45:18"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2540,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2539,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2564,
+                  "src": "994:4:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2538,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "994:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "993:6:18"
+            },
+            "scope": 2565,
+            "src": "895:298:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2566,
+        "src": "66:1129:18"
+      }
+    ],
+    "src": "0:1196:18"
+  },
+  "legacyAST": {
+    "absolutePath": "contracts/utils/OwnableContractOwner.sol",
+    "exportedSymbols": {
+      "OwnableContractOwner": [
+        2565
+      ]
+    },
+    "id": 2566,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2456,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:18"
+      },
+      {
+        "absolutePath": "contracts/utils/OwnableContract.sol",
+        "file": "../utils/OwnableContract.sol",
+        "id": 2457,
+        "nodeType": "ImportDirective",
+        "scope": 2566,
+        "sourceUnit": 2455,
+        "src": "25:38:18",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2458,
+              "name": "OwnableContract",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2454,
+              "src": "99:15:18",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                "typeString": "contract OwnableContract"
+              }
+            },
+            "id": 2459,
+            "nodeType": "InheritanceSpecifier",
+            "src": "99:15:18"
+          }
+        ],
+        "contractDependencies": [
+          2454,
+          2752,
+          2804,
+          2890
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2565,
+        "linearizedBaseContracts": [
+          2565,
+          2454,
+          2804,
+          2752,
+          2890
+        ],
+        "name": "OwnableContractOwner",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2465,
+            "name": "CalledTransferOwnership",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2464,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2461,
+                  "indexed": false,
+                  "name": "ownedContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2465,
+                  "src": "152:29:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                    "typeString": "contract OwnableContract"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2460,
+                    "name": "OwnableContract",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2454,
+                    "src": "152:15:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                      "typeString": "contract OwnableContract"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2463,
+                  "indexed": false,
+                  "name": "newOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2465,
+                  "src": "183:16:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2462,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "183:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "151:49:18"
+            },
+            "src": "122:79:18"
+          },
+          {
+            "body": {
+              "id": 2498,
+              "nodeType": "Block",
+              "src": "321:211:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 2481,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 2477,
+                          "name": "newOwner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2469,
+                          "src": "339:8:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 2479,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "359:1:18",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 2478,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "351:7:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 2480,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "351:10:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "339:22:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "696e76616c6964206e65774f776e65722061646472657373",
+                        "id": 2482,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "363:26:18",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_38df9a6ac171cc030fc8584b13686dac73d1e8a81e6950ae3f43e538a8a754d5",
+                          "typeString": "literal_string \"invalid newOwner address\""
+                        },
+                        "value": "invalid newOwner address"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_38df9a6ac171cc030fc8584b13686dac73d1e8a81e6950ae3f43e538a8a754d5",
+                          "typeString": "literal_string \"invalid newOwner address\""
+                        }
+                      ],
+                      "id": 2476,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3701,
+                        3702
+                      ],
+                      "referencedDeclaration": 3702,
+                      "src": "331:7:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2483,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "331:59:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2484,
+                  "nodeType": "ExpressionStatement",
+                  "src": "331:59:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2488,
+                        "name": "newOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2469,
+                        "src": "432:8:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2485,
+                        "name": "ownedContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2467,
+                        "src": "400:13:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        }
+                      },
+                      "id": 2487,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2782,
+                      "src": "400:31:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 2489,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "400:41:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2490,
+                  "nodeType": "ExpressionStatement",
+                  "src": "400:41:18"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2492,
+                        "name": "ownedContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2467,
+                        "src": "480:13:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 2493,
+                        "name": "newOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2469,
+                        "src": "495:8:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 2491,
+                      "name": "CalledTransferOwnership",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2465,
+                      "src": "456:23:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_OwnableContract_$2454_$_t_address_$returns$__$",
+                        "typeString": "function (contract OwnableContract,address)"
+                      }
+                    },
+                    "id": 2494,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "456:48:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2495,
+                  "nodeType": "EmitStatement",
+                  "src": "451:53:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 2496,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "521:4:18",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 2475,
+                  "id": 2497,
+                  "nodeType": "Return",
+                  "src": "514:11:18"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2499,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2472,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2471,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2838,
+                  "src": "296:9:18",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "296:9:18"
+              }
+            ],
+            "name": "callTransferOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2470,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2467,
+                  "name": "ownedContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2499,
+                  "src": "238:29:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                    "typeString": "contract OwnableContract"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2466,
+                    "name": "OwnableContract",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2454,
+                    "src": "238:15:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                      "typeString": "contract OwnableContract"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2469,
+                  "name": "newOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2499,
+                  "src": "269:16:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2468,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "269:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "237:49:18"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2475,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2474,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2499,
+                  "src": "315:4:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2473,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "315:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "314:6:18"
+            },
+            "scope": 2565,
+            "src": "207:325:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2503,
+            "name": "CalledClaimOwnership",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2502,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2501,
+                  "indexed": false,
+                  "name": "contractToOwn",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2503,
+                  "src": "565:29:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                    "typeString": "contract OwnableContract"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2500,
+                    "name": "OwnableContract",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2454,
+                    "src": "565:15:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                      "typeString": "contract OwnableContract"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "564:31:18"
+            },
+            "src": "538:58:18"
+          },
+          {
+            "body": {
+              "id": 2523,
+              "nodeType": "Block",
+              "src": "695:118:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2512,
+                        "name": "contractToOwn",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2505,
+                        "src": "705:13:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        }
+                      },
+                      "id": 2514,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "claimOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2803,
+                      "src": "705:28:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                        "typeString": "function () external"
+                      }
+                    },
+                    "id": 2515,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "705:30:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2516,
+                  "nodeType": "ExpressionStatement",
+                  "src": "705:30:18"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2518,
+                        "name": "contractToOwn",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2505,
+                        "src": "771:13:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        }
+                      ],
+                      "id": 2517,
+                      "name": "CalledClaimOwnership",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2503,
+                      "src": "750:20:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_OwnableContract_$2454_$returns$__$",
+                        "typeString": "function (contract OwnableContract)"
+                      }
+                    },
+                    "id": 2519,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "750:35:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2520,
+                  "nodeType": "EmitStatement",
+                  "src": "745:40:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 2521,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "802:4:18",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 2511,
+                  "id": 2522,
+                  "nodeType": "Return",
+                  "src": "795:11:18"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2524,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2508,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2507,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2838,
+                  "src": "670:9:18",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "670:9:18"
+              }
+            ],
+            "name": "callClaimOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2506,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2505,
+                  "name": "contractToOwn",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2524,
+                  "src": "630:29:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                    "typeString": "contract OwnableContract"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2504,
+                    "name": "OwnableContract",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2454,
+                    "src": "630:15:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                      "typeString": "contract OwnableContract"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "629:31:18"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2511,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2510,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2524,
+                  "src": "689:4:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2509,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "689:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "688:6:18"
+            },
+            "scope": 2565,
+            "src": "602:211:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2530,
+            "name": "CalledReclaimToken",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2529,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2526,
+                  "indexed": false,
+                  "name": "ownedContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2530,
+                  "src": "844:29:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                    "typeString": "contract OwnableContract"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2525,
+                    "name": "OwnableContract",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2454,
+                    "src": "844:15:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                      "typeString": "contract OwnableContract"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2528,
+                  "indexed": false,
+                  "name": "_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2530,
+                  "src": "875:12:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ERC20_$3134",
+                    "typeString": "contract ERC20"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2527,
+                    "name": "ERC20",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3134,
+                    "src": "875:5:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20_$3134",
+                      "typeString": "contract ERC20"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "843:45:18"
+            },
+            "src": "819:70:18"
+          },
+          {
+            "body": {
+              "id": 2563,
+              "nodeType": "Block",
+              "src": "1000:193:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 2546,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 2542,
+                          "name": "_token",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2534,
+                          "src": "1018:6:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_ERC20_$3134",
+                            "typeString": "contract ERC20"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 2544,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "1036:1:18",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 2543,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1028:7:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 2545,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1028:10:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1018:20:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "696e76616c6964205f746f6b656e2061646472657373",
+                        "id": 2547,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1040:24:18",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_10a905bbe187fde970257bdbd81b6983a3e0fe3a5079c87908dc9edf16df0cde",
+                          "typeString": "literal_string \"invalid _token address\""
+                        },
+                        "value": "invalid _token address"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_10a905bbe187fde970257bdbd81b6983a3e0fe3a5079c87908dc9edf16df0cde",
+                          "typeString": "literal_string \"invalid _token address\""
+                        }
+                      ],
+                      "id": 2541,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3701,
+                        3702
+                      ],
+                      "referencedDeclaration": 3702,
+                      "src": "1010:7:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2548,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1010:55:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2549,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1010:55:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2553,
+                        "name": "_token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2534,
+                        "src": "1102:6:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC20_$3134",
+                          "typeString": "contract ERC20"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_ERC20_$3134",
+                          "typeString": "contract ERC20"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2550,
+                        "name": "ownedContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2532,
+                        "src": "1075:13:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        }
+                      },
+                      "id": 2552,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "reclaimToken",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2751,
+                      "src": "1075:26:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_contract$_ERC20Basic_$3166_$returns$__$",
+                        "typeString": "function (contract ERC20Basic) external"
+                      }
+                    },
+                    "id": 2554,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1075:34:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2555,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1075:34:18"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2557,
+                        "name": "ownedContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2532,
+                        "src": "1143:13:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 2558,
+                        "name": "_token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2534,
+                        "src": "1158:6:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC20_$3134",
+                          "typeString": "contract ERC20"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                          "typeString": "contract OwnableContract"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_ERC20_$3134",
+                          "typeString": "contract ERC20"
+                        }
+                      ],
+                      "id": 2556,
+                      "name": "CalledReclaimToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2530,
+                      "src": "1124:18:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_OwnableContract_$2454_$_t_contract$_ERC20_$3134_$returns$__$",
+                        "typeString": "function (contract OwnableContract,contract ERC20)"
+                      }
+                    },
+                    "id": 2559,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1124:41:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2560,
+                  "nodeType": "EmitStatement",
+                  "src": "1119:46:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 2561,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1182:4:18",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 2540,
+                  "id": 2562,
+                  "nodeType": "Return",
+                  "src": "1175:11:18"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2564,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2537,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2536,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2838,
+                  "src": "975:9:18",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "975:9:18"
+              }
+            ],
+            "name": "callReclaimToken",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2535,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2532,
+                  "name": "ownedContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2564,
+                  "src": "921:29:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                    "typeString": "contract OwnableContract"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2531,
+                    "name": "OwnableContract",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2454,
+                    "src": "921:15:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OwnableContract_$2454",
+                      "typeString": "contract OwnableContract"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2534,
+                  "name": "_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2564,
+                  "src": "952:12:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ERC20_$3134",
+                    "typeString": "contract ERC20"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2533,
+                    "name": "ERC20",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3134,
+                    "src": "952:5:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20_$3134",
+                      "typeString": "contract ERC20"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "920:45:18"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2540,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2539,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2564,
+                  "src": "994:4:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2538,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "994:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "993:6:18"
+            },
+            "scope": 2565,
+            "src": "895:298:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2566,
+        "src": "66:1129:18"
+      }
+    ],
+    "src": "0:1196:18"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2021-08-14T17:04:47.480Z"
+}

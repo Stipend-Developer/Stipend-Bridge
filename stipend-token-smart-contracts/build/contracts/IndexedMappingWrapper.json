@@ -1,0 +1,1852 @@
+{
+  "contractName": "IndexedMappingWrapper",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "val",
+          "type": "address"
+        }
+      ],
+      "name": "add",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "val",
+          "type": "address"
+        }
+      ],
+      "name": "remove",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "val",
+          "type": "address"
+        }
+      ],
+      "name": "exists",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getValue",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getValueList",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5061049b806100206000396000f30060806040526004361061006c5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416630a3b0a4f81146100715780630ff4c916146100a657806329092d0e146100da578063c66789c2146100fb578063f6a3d24e14610160575b600080fd5b34801561007d57600080fd5b50610092600160a060020a0360043516610181565b604080519115158252519081900360200190f35b3480156100b257600080fd5b506100be600435610199565b60408051600160a060020a039092168252519081900360200190f35b3480156100e657600080fd5b50610092600160a060020a03600435166101ab565b34801561010757600080fd5b506101106101bd565b60408051602080825283518183015283519192839290830191858101910280838360005b8381101561014c578181015183820152602001610134565b505050509050019250505060405180910390f35b34801561016c57600080fd5b50610092600160a060020a03600435166101cf565b6000610193818363ffffffff6101e116565b92915050565b6000610193818363ffffffff61026016565b6000610193818363ffffffff61028f16565b60606101c960006103a3565b90505b90565b6000610193818363ffffffff61040916565b60006101ed8383610409565b156101fa57506000610193565b50600160a060020a0316600081815260208381526040808320805460ff1916600190811790915560028601805480830182559085528385208101805473ffffffffffffffffffffffffffffffffffffffff19168717905594845294850190915290205590565b6000826002018281548110151561027357fe5b600091825260209091200154600160a060020a03169392505050565b600080600061029e8585610409565b15156102ad576000925061039b565b600160a060020a03841660009081526001860160205260409020546002860180549193509060001981019081106102e057fe5b600091825260209091200154600286018054600160a060020a03909216925082918490811061030b57fe5b6000918252602080832091909101805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a039485161790559183168152600187019091526040902082905560028501805490610368906000198301610428565b50600160a060020a038416600090815260208681526040808320805460ff19169055600180890190925282209190915592505b505092915050565b6060816002018054806020026020016040519081016040528092919081815260200182805480156103fd57602002820191906000526020600020905b8154600160a060020a031681526001909101906020018083116103df575b50505050509050919050565b600160a060020a03166000908152602091909152604090205460ff1690565b81548183558181111561044c5760008381526020902061044c918101908301610451565b505050565b6101cc91905b8082111561046b5760008155600101610457565b50905600a165627a7a72305820b46040abb17ff7a2736150b4fb129283963f3ea8aadbeefe9f2631e55b85c7d10029",
+  "deployedBytecode": "0x60806040526004361061006c5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416630a3b0a4f81146100715780630ff4c916146100a657806329092d0e146100da578063c66789c2146100fb578063f6a3d24e14610160575b600080fd5b34801561007d57600080fd5b50610092600160a060020a0360043516610181565b604080519115158252519081900360200190f35b3480156100b257600080fd5b506100be600435610199565b60408051600160a060020a039092168252519081900360200190f35b3480156100e657600080fd5b50610092600160a060020a03600435166101ab565b34801561010757600080fd5b506101106101bd565b60408051602080825283518183015283519192839290830191858101910280838360005b8381101561014c578181015183820152602001610134565b505050509050019250505060405180910390f35b34801561016c57600080fd5b50610092600160a060020a03600435166101cf565b6000610193818363ffffffff6101e116565b92915050565b6000610193818363ffffffff61026016565b6000610193818363ffffffff61028f16565b60606101c960006103a3565b90505b90565b6000610193818363ffffffff61040916565b60006101ed8383610409565b156101fa57506000610193565b50600160a060020a0316600081815260208381526040808320805460ff1916600190811790915560028601805480830182559085528385208101805473ffffffffffffffffffffffffffffffffffffffff19168717905594845294850190915290205590565b6000826002018281548110151561027357fe5b600091825260209091200154600160a060020a03169392505050565b600080600061029e8585610409565b15156102ad576000925061039b565b600160a060020a03841660009081526001860160205260409020546002860180549193509060001981019081106102e057fe5b600091825260209091200154600286018054600160a060020a03909216925082918490811061030b57fe5b6000918252602080832091909101805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a039485161790559183168152600187019091526040902082905560028501805490610368906000198301610428565b50600160a060020a038416600090815260208681526040808320805460ff19169055600180890190925282209190915592505b505092915050565b6060816002018054806020026020016040519081016040528092919081815260200182805480156103fd57602002820191906000526020600020905b8154600160a060020a031681526001909101906020018083116103df575b50505050509050919050565b600160a060020a03166000908152602091909152604090205460ff1690565b81548183558181111561044c5760008381526020902061044c918101908301610451565b505050565b6101cc91905b8082111561046b5760008155600101610457565b50905600a165627a7a72305820b46040abb17ff7a2736150b4fb129283963f3ea8aadbeefe9f2631e55b85c7d10029",
+  "sourceMap": "65:640:13:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;65:640:13;;;;;;;",
+  "deployedSourceMap": "65:640:13:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;193:87;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;193:87:13;-1:-1:-1;;;;;193:87:13;;;;;;;;;;;;;;;;;;;;;;;490:106;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;490:106:13;;;;;;;;;-1:-1:-1;;;;;490:106:13;;;;;;;;;;;;;;286:93;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;286:93:13;-1:-1:-1;;;;;286:93:13;;;;;602:101;;8:9:-1;5:2;;;30:1;27;20:12;5:2;602:101:13;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;602:101:13;;;;;;;;;;;;;;;;;386:98;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;386:98:13;-1:-1:-1;;;;;386:98:13;;;;;193:87;237:4;260:13;237:4;269:3;260:13;:8;:13;:::i;:::-;253:20;193:87;-1:-1:-1;;193:87:13:o;490:106::-;543:7;569:20;543:7;583:5;569:20;:13;:20;:::i;286:93::-;333:4;356:16;333:4;368:3;356:16;:11;:16;:::i;602:101::-;649:9;677:19;:4;:17;:19::i;:::-;670:26;;602:101;;:::o;386:98::-;438:4;461:16;438:4;473:3;461:16;:11;:16;:::i;197:242:16:-;260:4;280:17;287:4;293:3;280:6;:17::i;:::-;276:35;;;-1:-1:-1;306:5:16;299:12;;276:35;-1:-1:-1;;;;;;322:21:16;:16;:21;;;;;;;;;;;:28;;-1:-1:-1;;322:28:16;346:4;322:28;;;;;;383:14;;;27:10:-1;;23:18;;;45:23;;383:24:16;;;;;;;;;;-1:-1:-1;;383:24:16;;;;;360:20;;;:15;;;:20;;;;;:51;346:4;197:242::o;1130:126::-;1202:7;1228:4;:14;;1243:5;1228:21;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1228:21:16;;1130:126;-1:-1:-1;;;1130:126:16:o;445:551::-;511:4;527:10;547:15;578:17;585:4;591:3;578:6;:17::i;:::-;577:18;573:36;;;604:5;597:12;;;;573:36;-1:-1:-1;;;;;628:20:16;;;;;;:15;;;:20;;;;;;668:14;;;683:21;;628:20;;-1:-1:-1;668:14:16;-1:-1:-1;;683:25:16;;;668:41;;;;;;;;;;;;;;;;761:14;;;:21;;-1:-1:-1;;;;;668:41:16;;;;-1:-1:-1;668:41:16;;776:5;;761:21;;;;;;;;;;;;;;;;;;:31;;-1:-1:-1;;761:31:16;-1:-1:-1;;;;;761:31:16;;;;;;802:24;;;;;-1:-1:-1;802:15:16;;:24;;;;;;:32;;;844:14;;;:23;;;;;-1:-1:-1;;844:23:16;;;:::i;:::-;-1:-1:-1;;;;;;909:21:16;;:16;:21;;;;;;;;;;;902:28;;-1:-1:-1;;902:28:16;;;;947:15;;;:20;;;;;940:27;;;;902:28;-1:-1:-1;445:551:16;;;;;;;:::o;1262:113::-;1326:9;1354:4;:14;;1347:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1347:21:16;;;;;;;;;;;;;;;;;;;;;;;1262:113;;;:::o;1002:122::-;-1:-1:-1;;;;;1096:21:16;1073:4;1096:21;;;;;;;;;;;;;;;1002:122::o;65:640:13:-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;",
+  "source": "pragma solidity 0.4.24;\n\nimport \"../utils/IndexedMapping.sol\";\n\n\ncontract IndexedMappingWrapper {\n\n    using IndexedMapping for IndexedMapping.Data;\n    IndexedMapping.Data internal data;\n\n    function add(address val) external returns (bool) {\n        return data.add(val);\n    }\n\n    function remove(address val) external returns (bool) {\n        return data.remove(val);\n    }\n \n    function exists(address val) external view returns (bool) {\n        return data.exists(val);\n    }\n\n    function getValue(uint index) external view returns (address) {\n        return data.getValue(index);\n    }\n\n    function getValueList() external view returns (address[]) {\n        return data.getValueList();\n    }\n}\n",
+  "sourcePath": "contracts/mock/IndexedMappingWrapper.sol",
+  "ast": {
+    "absolutePath": "contracts/mock/IndexedMappingWrapper.sol",
+    "exportedSymbols": {
+      "IndexedMappingWrapper": [
+        2199
+      ]
+    },
+    "id": 2200,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2129,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:13"
+      },
+      {
+        "absolutePath": "contracts/utils/IndexedMapping.sol",
+        "file": "../utils/IndexedMapping.sol",
+        "id": 2130,
+        "nodeType": "ImportDirective",
+        "scope": 2200,
+        "sourceUnit": 2446,
+        "src": "25:37:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2199,
+        "linearizedBaseContracts": [
+          2199
+        ],
+        "name": "IndexedMappingWrapper",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 2133,
+            "libraryName": {
+              "contractScope": null,
+              "id": 2131,
+              "name": "IndexedMapping",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2445,
+              "src": "109:14:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IndexedMapping_$2445",
+                "typeString": "library IndexedMapping"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "103:45:13",
+            "typeName": {
+              "contractScope": null,
+              "id": 2132,
+              "name": "IndexedMapping.Data",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2282,
+              "src": "128:19:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Data_$2282_storage_ptr",
+                "typeString": "struct IndexedMapping.Data"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 2135,
+            "name": "data",
+            "nodeType": "VariableDeclaration",
+            "scope": 2199,
+            "src": "153:33:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Data_$2282_storage",
+              "typeString": "struct IndexedMapping.Data"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 2134,
+              "name": "IndexedMapping.Data",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2282,
+              "src": "153:19:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Data_$2282_storage_ptr",
+                "typeString": "struct IndexedMapping.Data"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2147,
+              "nodeType": "Block",
+              "src": "243:37:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2144,
+                        "name": "val",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2137,
+                        "src": "269:3:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2142,
+                        "name": "data",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2135,
+                        "src": "260:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$2282_storage",
+                          "typeString": "struct IndexedMapping.Data storage ref"
+                        }
+                      },
+                      "id": 2143,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "add",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2323,
+                      "src": "260:8:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Data_$2282_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Data_$2282_storage_ptr_$",
+                        "typeString": "function (struct IndexedMapping.Data storage pointer,address) returns (bool)"
+                      }
+                    },
+                    "id": 2145,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "260:13:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 2141,
+                  "id": 2146,
+                  "nodeType": "Return",
+                  "src": "253:20:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2148,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "add",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2138,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2137,
+                  "name": "val",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2148,
+                  "src": "206:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2136,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "206:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "205:13:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2141,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2140,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2148,
+                  "src": "237:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2139,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "237:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "236:6:13"
+            },
+            "scope": 2199,
+            "src": "193:87:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 2160,
+              "nodeType": "Block",
+              "src": "339:40:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2157,
+                        "name": "val",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2150,
+                        "src": "368:3:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2155,
+                        "name": "data",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2135,
+                        "src": "356:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$2282_storage",
+                          "typeString": "struct IndexedMapping.Data storage ref"
+                        }
+                      },
+                      "id": 2156,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "remove",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2402,
+                      "src": "356:11:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Data_$2282_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Data_$2282_storage_ptr_$",
+                        "typeString": "function (struct IndexedMapping.Data storage pointer,address) returns (bool)"
+                      }
+                    },
+                    "id": 2158,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "356:16:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 2154,
+                  "id": 2159,
+                  "nodeType": "Return",
+                  "src": "349:23:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2161,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "remove",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2151,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2150,
+                  "name": "val",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2161,
+                  "src": "302:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2149,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "302:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "301:13:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2154,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2153,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2161,
+                  "src": "333:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2152,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "333:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "332:6:13"
+            },
+            "scope": 2199,
+            "src": "286:93:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 2173,
+              "nodeType": "Block",
+              "src": "444:40:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2170,
+                        "name": "val",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2163,
+                        "src": "473:3:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2168,
+                        "name": "data",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2135,
+                        "src": "461:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$2282_storage",
+                          "typeString": "struct IndexedMapping.Data storage ref"
+                        }
+                      },
+                      "id": 2169,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "exists",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2417,
+                      "src": "461:11:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Data_$2282_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Data_$2282_storage_ptr_$",
+                        "typeString": "function (struct IndexedMapping.Data storage pointer,address) view returns (bool)"
+                      }
+                    },
+                    "id": 2171,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "461:16:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 2167,
+                  "id": 2172,
+                  "nodeType": "Return",
+                  "src": "454:23:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2174,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "exists",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2164,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2163,
+                  "name": "val",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2174,
+                  "src": "402:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2162,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "402:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "401:13:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2167,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2166,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2174,
+                  "src": "438:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2165,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "438:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "437:6:13"
+            },
+            "scope": 2199,
+            "src": "386:98:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 2186,
+              "nodeType": "Block",
+              "src": "552:44:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2183,
+                        "name": "index",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2176,
+                        "src": "583:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2181,
+                        "name": "data",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2135,
+                        "src": "569:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$2282_storage",
+                          "typeString": "struct IndexedMapping.Data storage ref"
+                        }
+                      },
+                      "id": 2182,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getValue",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2432,
+                      "src": "569:13:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Data_$2282_storage_ptr_$_t_uint256_$returns$_t_address_$bound_to$_t_struct$_Data_$2282_storage_ptr_$",
+                        "typeString": "function (struct IndexedMapping.Data storage pointer,uint256) view returns (address)"
+                      }
+                    },
+                    "id": 2184,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "569:20:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 2180,
+                  "id": 2185,
+                  "nodeType": "Return",
+                  "src": "562:27:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2187,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getValue",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2177,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2176,
+                  "name": "index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2187,
+                  "src": "508:10:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2175,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "508:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "507:12:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2180,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2179,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2187,
+                  "src": "543:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2178,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "543:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "542:9:13"
+            },
+            "scope": 2199,
+            "src": "490:106:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 2197,
+              "nodeType": "Block",
+              "src": "660:43:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2193,
+                        "name": "data",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2135,
+                        "src": "677:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$2282_storage",
+                          "typeString": "struct IndexedMapping.Data storage ref"
+                        }
+                      },
+                      "id": 2194,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getValueList",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2444,
+                      "src": "677:17:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Data_$2282_storage_ptr_$returns$_t_array$_t_address_$dyn_memory_ptr_$bound_to$_t_struct$_Data_$2282_storage_ptr_$",
+                        "typeString": "function (struct IndexedMapping.Data storage pointer) view returns (address[] memory)"
+                      }
+                    },
+                    "id": 2195,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "677:19:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                      "typeString": "address[] memory"
+                    }
+                  },
+                  "functionReturnParameters": 2192,
+                  "id": 2196,
+                  "nodeType": "Return",
+                  "src": "670:26:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2198,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getValueList",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2188,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "623:2:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2192,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2191,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2198,
+                  "src": "649:9:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 2189,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "649:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 2190,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "649:9:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "648:11:13"
+            },
+            "scope": 2199,
+            "src": "602:101:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2200,
+        "src": "65:640:13"
+      }
+    ],
+    "src": "0:706:13"
+  },
+  "legacyAST": {
+    "absolutePath": "contracts/mock/IndexedMappingWrapper.sol",
+    "exportedSymbols": {
+      "IndexedMappingWrapper": [
+        2199
+      ]
+    },
+    "id": 2200,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2129,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:13"
+      },
+      {
+        "absolutePath": "contracts/utils/IndexedMapping.sol",
+        "file": "../utils/IndexedMapping.sol",
+        "id": 2130,
+        "nodeType": "ImportDirective",
+        "scope": 2200,
+        "sourceUnit": 2446,
+        "src": "25:37:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2199,
+        "linearizedBaseContracts": [
+          2199
+        ],
+        "name": "IndexedMappingWrapper",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 2133,
+            "libraryName": {
+              "contractScope": null,
+              "id": 2131,
+              "name": "IndexedMapping",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2445,
+              "src": "109:14:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IndexedMapping_$2445",
+                "typeString": "library IndexedMapping"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "103:45:13",
+            "typeName": {
+              "contractScope": null,
+              "id": 2132,
+              "name": "IndexedMapping.Data",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2282,
+              "src": "128:19:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Data_$2282_storage_ptr",
+                "typeString": "struct IndexedMapping.Data"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 2135,
+            "name": "data",
+            "nodeType": "VariableDeclaration",
+            "scope": 2199,
+            "src": "153:33:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Data_$2282_storage",
+              "typeString": "struct IndexedMapping.Data"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 2134,
+              "name": "IndexedMapping.Data",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2282,
+              "src": "153:19:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Data_$2282_storage_ptr",
+                "typeString": "struct IndexedMapping.Data"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2147,
+              "nodeType": "Block",
+              "src": "243:37:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2144,
+                        "name": "val",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2137,
+                        "src": "269:3:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2142,
+                        "name": "data",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2135,
+                        "src": "260:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$2282_storage",
+                          "typeString": "struct IndexedMapping.Data storage ref"
+                        }
+                      },
+                      "id": 2143,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "add",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2323,
+                      "src": "260:8:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Data_$2282_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Data_$2282_storage_ptr_$",
+                        "typeString": "function (struct IndexedMapping.Data storage pointer,address) returns (bool)"
+                      }
+                    },
+                    "id": 2145,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "260:13:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 2141,
+                  "id": 2146,
+                  "nodeType": "Return",
+                  "src": "253:20:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2148,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "add",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2138,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2137,
+                  "name": "val",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2148,
+                  "src": "206:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2136,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "206:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "205:13:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2141,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2140,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2148,
+                  "src": "237:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2139,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "237:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "236:6:13"
+            },
+            "scope": 2199,
+            "src": "193:87:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 2160,
+              "nodeType": "Block",
+              "src": "339:40:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2157,
+                        "name": "val",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2150,
+                        "src": "368:3:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2155,
+                        "name": "data",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2135,
+                        "src": "356:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$2282_storage",
+                          "typeString": "struct IndexedMapping.Data storage ref"
+                        }
+                      },
+                      "id": 2156,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "remove",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2402,
+                      "src": "356:11:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Data_$2282_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Data_$2282_storage_ptr_$",
+                        "typeString": "function (struct IndexedMapping.Data storage pointer,address) returns (bool)"
+                      }
+                    },
+                    "id": 2158,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "356:16:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 2154,
+                  "id": 2159,
+                  "nodeType": "Return",
+                  "src": "349:23:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2161,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "remove",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2151,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2150,
+                  "name": "val",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2161,
+                  "src": "302:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2149,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "302:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "301:13:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2154,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2153,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2161,
+                  "src": "333:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2152,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "333:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "332:6:13"
+            },
+            "scope": 2199,
+            "src": "286:93:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 2173,
+              "nodeType": "Block",
+              "src": "444:40:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2170,
+                        "name": "val",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2163,
+                        "src": "473:3:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2168,
+                        "name": "data",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2135,
+                        "src": "461:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$2282_storage",
+                          "typeString": "struct IndexedMapping.Data storage ref"
+                        }
+                      },
+                      "id": 2169,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "exists",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2417,
+                      "src": "461:11:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Data_$2282_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Data_$2282_storage_ptr_$",
+                        "typeString": "function (struct IndexedMapping.Data storage pointer,address) view returns (bool)"
+                      }
+                    },
+                    "id": 2171,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "461:16:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 2167,
+                  "id": 2172,
+                  "nodeType": "Return",
+                  "src": "454:23:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2174,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "exists",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2164,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2163,
+                  "name": "val",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2174,
+                  "src": "402:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2162,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "402:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "401:13:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2167,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2166,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2174,
+                  "src": "438:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2165,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "438:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "437:6:13"
+            },
+            "scope": 2199,
+            "src": "386:98:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 2186,
+              "nodeType": "Block",
+              "src": "552:44:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2183,
+                        "name": "index",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2176,
+                        "src": "583:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2181,
+                        "name": "data",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2135,
+                        "src": "569:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$2282_storage",
+                          "typeString": "struct IndexedMapping.Data storage ref"
+                        }
+                      },
+                      "id": 2182,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getValue",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2432,
+                      "src": "569:13:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Data_$2282_storage_ptr_$_t_uint256_$returns$_t_address_$bound_to$_t_struct$_Data_$2282_storage_ptr_$",
+                        "typeString": "function (struct IndexedMapping.Data storage pointer,uint256) view returns (address)"
+                      }
+                    },
+                    "id": 2184,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "569:20:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 2180,
+                  "id": 2185,
+                  "nodeType": "Return",
+                  "src": "562:27:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2187,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getValue",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2177,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2176,
+                  "name": "index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2187,
+                  "src": "508:10:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2175,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "508:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "507:12:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2180,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2179,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2187,
+                  "src": "543:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2178,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "543:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "542:9:13"
+            },
+            "scope": 2199,
+            "src": "490:106:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 2197,
+              "nodeType": "Block",
+              "src": "660:43:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2193,
+                        "name": "data",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2135,
+                        "src": "677:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$2282_storage",
+                          "typeString": "struct IndexedMapping.Data storage ref"
+                        }
+                      },
+                      "id": 2194,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getValueList",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2444,
+                      "src": "677:17:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Data_$2282_storage_ptr_$returns$_t_array$_t_address_$dyn_memory_ptr_$bound_to$_t_struct$_Data_$2282_storage_ptr_$",
+                        "typeString": "function (struct IndexedMapping.Data storage pointer) view returns (address[] memory)"
+                      }
+                    },
+                    "id": 2195,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "677:19:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                      "typeString": "address[] memory"
+                    }
+                  },
+                  "functionReturnParameters": 2192,
+                  "id": 2196,
+                  "nodeType": "Return",
+                  "src": "670:26:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2198,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getValueList",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2188,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "623:2:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2192,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2191,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2198,
+                  "src": "649:9:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 2189,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "649:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 2190,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "649:9:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "648:11:13"
+            },
+            "scope": 2199,
+            "src": "602:101:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2200,
+        "src": "65:640:13"
+      }
+    ],
+    "src": "0:706:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2021-08-14T17:04:47.487Z"
+}
