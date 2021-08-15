@@ -1,6 +1,6 @@
 {
-    "privateKey": "0xABCD",
-    "privateKeyCustodian": "0x1234",
-    "privateKeyMerchant": "0x5678",
-    "accountMultiSigAddress": "0xFFc4E87e971bb9000F4F042ED4A9A0E349415D98"
+    "privateKey": "eeab8014c42f7b31f117db657326f488f6b57b07b0c542faa2b52e003260bdb9",
+    "privateKeyCustodian": "7d167d3a953dab627d4d76b54ae40ba40e7cec35bb86a8e09a19a5c3cd12f1f9",
+    "privateKeyMerchant": "daf60e95d14c25beac158259a1e9f3b74223fed9862df6254e3c5919769d7966",
+    "accountMultiSigAddress": "0x5ce2C91bED1ed63A52E709009115a5c7a03925BC"
 }
